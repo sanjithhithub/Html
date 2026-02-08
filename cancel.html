@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cancel Order | Thread of Hope</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #fff3f7, #ffe6f0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    width: 95%;
+    max-width: 650px;
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Icon */
+.icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ff9db7, #e85d8a);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.sub-text {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Order Info */
+.order-box {
+    background: #fff8fa;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.order-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+/* Form */
+form {
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    color: #e85d8a;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 90px;
+}
+
+/* Buttons */
+.btn-group {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    flex: 1;
+    padding: 14px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cancel-btn {
+    background: linear-gradient(135deg, #ff6b81, #e85d8a);
+    color: white;
+}
+
+.cancel-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(232,93,138,0.3);
+}
+
+.back-btn {
+    border: 2px solid #e85d8a;
+    background: white;
+    color: #e85d8a;
+}
+
+.back-btn:hover {
+    background: #e85d8a;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="icon">✖</div>
+
+    <h1>Cancel Your Order</h1>
+    <p class="sub-text">
+        We're sorry to see this order go 💔  
+        Please tell us why you're canceling.
+    </p>
+
+    <!-- Order Info -->
+    <div class="order-box">
+        <div class="order-row">
+            <span>Order Number</span>
+            <span>#BR-2026-1045</span>
+        </div>
+        <div class="order-row">
+            <span>Bracelet</span>
+            <span>Rose Gold Charm Bracelet</span>
+        </div>
+        <div class="order-row">
+            <span>Total Amount</span>
+            <span>$129.00</span>
+        </div>
+    </div>
+
+    <!-- Cancel Form -->
+    <form>
+        <label>Select Reason</label>
+        <select required>
+            <option value="">Choose a reason</option>
+            <option>Ordered by mistake</option>
+            <option>Found cheaper elsewhere</option>
+            <option>Shipping delay</option>
+            <option>Change of mind</option>
+            <option>Other</option>
+        </select>
+
+        <label>Additional Comments (Optional)</label>
+        <textarea placeholder="Tell us more..."></textarea>
+
+        <div class="btn-group">
+            <button type="submit" class="cancel-btn">Confirm Cancellation</button>
+            <button type="button" class="back-btn">Go Back</button>
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

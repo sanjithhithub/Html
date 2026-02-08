@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventino - Wishlist</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+    padding: 40px;
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    color: #c2185b;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+/* Grid */
+.wishlist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Card */
+.card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+/* Content */
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Quality Badge */
+.quality {
+    margin: 8px 0;
+    font-size: 13px;
+    background: #fce4ec;
+    color: #c2185b;
+    padding: 4px 10px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+/* Description */
+.description {
+    font-size: 13px;
+    color: #666;
+    margin: 10px 0;
+    flex-grow: 1;
+}
+
+/* Price */
+.price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #c2185b;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.add-btn {
+    background: linear-gradient(45deg, #d81b60, #ff4081);
+    color: white;
+}
+
+.add-btn:hover {
+    opacity: 0.85;
+}
+
+.remove-btn {
+    background: #f1f1f1;
+    color: #555;
+}
+
+.remove-btn:hover {
+    background: #e0e0e0;
+}
+
+.empty-message {
+    text-align: center;
+    color: #777;
+    margin-top: 50px;
+    font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>💖 My Wishlist</h2>
+
+<div class="wishlist-container" id="wishlist"></div>
+
+<div class="empty-message" id="emptyMessage" style="display:none;">
+    Your wishlist is empty.
+</div>
+
+<script>
+
+let wishlistItems = [
+    { 
+        id: 1, 
+        name: "Rose Gold Bracelet", 
+        price: 120, 
+        quality: "Premium 18K Finish",
+        description: "Elegant handcrafted bracelet with luxury rose gold plating. Perfect for parties and special occasions.",
+        image: "https://i.imgur.com/2DhmtJ4.jpg" 
+    },
+    { 
+        id: 2, 
+        name: "Silver Charm Bracelet", 
+        price: 90, 
+        quality: "925 Sterling Silver",
+        description: "Minimal charm bracelet with polished silver shine. Lightweight and comfortable daily wear.",
+        image: "https://i.imgur.com/oYiTqum.jpg" 
+    }
+];
+
+function renderWishlist() {
+    const wishlistDiv = document.getElementById("wishlist");
+    const emptyMessage = document.getElementById("emptyMessage");
+
+    wishlistDiv.innerHTML = "";
+
+    if (wishlistItems.length === 0) {
+        emptyMessage.style.display = "block";
+        return;
+    } else {
+        emptyMessage.style.display = "none";
+    }
+
+    wishlistItems.forEach(item => {
+        wishlistDiv.innerHTML += `
+            <div class="card">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="card-content">
+                    <h4>${item.name}</h4>
+                    <div class="quality">${item.quality}</div>
+                    <div class="description">${item.description}</div>
+                    <div class="price">€${item.price}</div>
+                    <div class="button-group">
+                        <button class="add-btn" onclick="addToBag(${item.id})">Add to Bag</button>
+                        <button class="remove-btn" onclick="removeFromWishlist(${item.id})">Remove</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+}
+
+function addToBag(id) {
+    alert("Product added to bag!");
+}
+
+function removeFromWishlist(id) {
+    wishlistItems = wishlistItems.filter(item => item.id !== id);
+    renderWishlist();
+}
+
+renderWishlist();
+
+</script>
+
+</body>
+</html>

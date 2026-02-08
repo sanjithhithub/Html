@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Successful | Thread of Hope</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #fff0f6, #ffe6f0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Premium Card */
+.success-container {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(15px);
+    width: 95%;
+    max-width: 650px;
+    padding: 50px 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* SUCCESS ICON */
+.icon {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    background: linear-gradient(135deg, #e85d8a, #d94f7a);
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    animation: pulse 2s infinite;
+}
+
+.icon::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 55px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(232,93,138,0.6); }
+    70% { box-shadow: 0 0 0 25px rgba(232,93,138,0); }
+    100% { box-shadow: 0 0 0 0 rgba(232,93,138,0); }
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.sub-text {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Order Box */
+.order-box {
+    background: #fff8fa;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.order-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.total {
+    font-weight: bold;
+    color: #e85d8a;
+}
+
+/* Address Section */
+.address-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.address-box {
+    flex: 1;
+    background: #fff8fa;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: left;
+    min-width: 250px;
+}
+
+.address-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #e85d8a;
+}
+
+/* Buttons */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    flex: 1;
+    padding: 14px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.primary {
+    background: linear-gradient(135deg, #e85d8a, #d94f7a);
+    color: white;
+}
+
+.primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(232,93,138,0.3);
+}
+
+.secondary {
+    border: 2px solid #e85d8a;
+    color: #e85d8a;
+}
+
+.secondary:hover {
+    background: #e85d8a;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="success-container">
+
+    <div class="icon"></div>
+
+    <h1>Your Order is Confirmed 💖</h1>
+    <p class="sub-text">
+        Thank you for choosing Thread of Hope.  
+        Your bracelet is being prepared with love ✨
+    </p>
+
+    <!-- Order Details -->
+    <div class="order-box">
+        <div class="order-row">
+            <span>Order Number</span>
+            <span>#BR-2026-1045</span>
+        </div>
+        <div class="order-row">
+            <span>Order Date</span>
+            <span>08 February 2026</span>
+        </div>
+        <div class="order-row">
+            <span>Payment Method</span>
+            <span>Visa **** 4242</span>
+        </div>
+        <div class="order-row">
+            <span>Total Amount</span>
+            <span class="total">$129.00</span>
+        </div>
+    </div>
+
+    <!-- Address Section -->
+    <div class="address-section">
+
+        <div class="address-box">
+            <div class="address-title">Shipping Address</div>
+            Sanjith M<br>
+            45, Anna Nagar Main Road<br>
+            Erode, Tamil Nadu 638001<br>
+            India<br>
+            Phone: +91 98765 43210
+        </div>
+
+        <div class="address-box">
+            <div class="address-title">Billing Address</div>
+            Sanjith M<br>
+            45, Anna Nagar Main Road<br>
+            Erode, Tamil Nadu 638001<br>
+            India<br>
+            Phone: +91 98765 43210
+        </div>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-group">
+        <a href="#" class="btn primary">📦 Track Your Order</a>
+        <a href="#" class="btn secondary">Continue Shopping</a>
+    </div>
+
+</div>
+
+</body>
+</html>
